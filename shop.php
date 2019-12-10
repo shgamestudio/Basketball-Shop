@@ -179,7 +179,7 @@
 
             <div class="col-md-9"> <!-- col-md-9 Begin -->
                 <div class="box"> <!-- box Begin -->
-                    <h1>Shop</h1>
+                    <h1>Cửa hàng</h1>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio explicabo, tenetur alias ratione voluptates saepe inventore labore aliquam velit sed eos modi aliquid autem ipsum hic, unde, necessitatibus at. Ex?
                     </p>

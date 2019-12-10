@@ -130,7 +130,7 @@
                     <label class="col-md-3 control-label"> Hình sản phẩm - 2 </label>
 
                     <div class="col-md-6">
-                        <input type="file" name="product_img2" class="form-control" required>
+                        <input type="file" name="product_img2" class="form-control" >
                     </div>
 
                 </div> <!--form-group End-->
@@ -140,7 +140,7 @@
                     <label class="col-md-3 control-label"> Hình sản phẩm - 3 </label>
 
                     <div class="col-md-6">
-                        <input type="file" name="product_img3" class="form-control" required>
+                        <input type="file" name="product_img3" class="form-control" >
                     </div>
 
                 </div> <!--form-group End-->
@@ -150,7 +150,7 @@
                     <label class="col-md-3 control-label"> Hình sản phẩm - 4 </label>
 
                     <div class="col-md-6">
-                        <input type="file" name="product_img4" class="form-control" required>
+                        <input type="file" name="product_img4" class="form-control" >
                     </div>
 
                 </div> <!--form-group End-->
@@ -235,7 +235,7 @@
         move_uploaded_file($temp_name4,"product_images/$product_img4");
         
         $insert_product = "insert into products (p_cat_id,cat_id,date,product_title,product_img1,product_img2,product_img3,product_img4,product_price,product_keywords,product_desc) values
-        ('$product_cat','$cat',NOW(),'$product_title',' $product_img1',' $product_img2',' $product_img3',' $product_img4',' $product_price','$product_keywords','$product_desc')";
+        ('$product_cat','$cat',NOW(),'$product_title','$product_img1','$product_img2','$product_img3','$product_img4','$product_price','$product_keywords','$product_desc')";
 
         $run_product = mysqli_query($con,$insert_product);
         if($run_product){

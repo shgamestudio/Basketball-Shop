@@ -193,6 +193,11 @@ body{
     width: 290px;
 }
 
+.pro_title_size{ /*sửa size tiêu đề product*/
+    font-size: 18px;
+}
+
+
 @media(max-width:768px){
     .single{
         width:60%;
@@ -212,9 +217,26 @@ body{
 }
 
 #content .product .text p.price{
-    font: size 18px;
+    font-size: 18px;
     text-align: center;
     font-weight: 400;
+}
+
+.pad_h{
+    word-wrap: break-word;
+    white-space: nowrap; 
+    padding-bottom: 5px;
+   
+   
+    
+    overflow: hidden;
+    text-overflow: ellipsis;
+  
+    text-align: center;
+}
+
+.price{
+    padding-bottom: 5px;
 }
 
 #content .product .text button{
@@ -393,6 +415,9 @@ body{
       margin: 0;
   }
 
+ 
+
+  
 
 
 /* Footer Styles */

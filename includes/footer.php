@@ -42,11 +42,24 @@
             <div class="col-sm-6 col-md-3">
                 <h4 class="headline">Danh mục sản phẩm</h4>
                 <ul>
-                    <li class="space_line"><a href="#">Bóng</a></li>
-                    <li class="space_line"><a href="#">Giày</a></li>
-                    <li class="space_line"><a href="#">Quần áo</a></li>
-                    <li class="space_line"><a href="#">Phụ kiện</a></li>
-                    <li class="space_line"><a href="#">Tất</a></li>
+                    <?php 
+                        $get_p_cats = "select * from product_categories";
+                        $run_p_cats = mysqli_query($con,$get_p_cats);
+                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+ 
+                            $p_cat_id = $row_p_cats['p_cat_id'];
+                             
+                            $p_cat_title = $row_p_cats['p_cat_title'];
+ 
+                            echo "
+                                <li class='space_line'>
+                                    <a href='shop.php?p_cat=$p_cat_id'>
+                                        $p_cat_title
+                                    </a>
+                                </li>
+                            ";
+                        }
+                    ?>
                 </ul>
 
                 <!-- <h4 class="headline">Thao tác</h4>
@@ -82,14 +95,18 @@
                      
                  </p>
 
-               <form action="get" method="post">
+               <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" 
+                onsubmit="window.open('feedburner.google.com/fb/a/mailverify?uri=FlyToAnotherSky', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" method="post">
                     <div class="input-group">
                         <input type="text" class="form-control" name="email">
+                        <input type="hidden" value="FlyToAnotherSky" name="uri"/><input type="hidden" name="loc" value="en_US"/>
                         <span class="input-group-btn">
                             <input type="submit" value="Subscribe" class="btn btn-default subc">
                         </span>
                     </div>               
                </form>
+
+               
 
                 <hr>
 
