@@ -6,11 +6,9 @@
     <div class="panel-body"> 
         <ul class="nav nav-pills nav-stacked category-menu">
             
-            <li><a href="#">Bóng</a></li>
-            <li><a href="#">Giày</a></li>
-            <li><a href="#">Quần áo</a></li>
-            <li><a href="#">Phụ kiện</a></li>
-            <li><a href="#">Vớ</a></li>
+            <?php getPCats();
+
+            ?>
 
         </ul>
     </div>
@@ -25,10 +23,9 @@
     <div class="panel-body"> 
         <ul class="nav nav-pills nav-stacked category-menu">
             
-            <li><a href="#">Nike</a></li>
-            <li><a href="#">Adidas</a></li>
-            <li><a href="#">Lining</a></li>
-            <li><a href="#">Khác</a></li>
+            <?php getCats();
+
+            ?>
 
 
         </ul>

@@ -12,17 +12,17 @@
                 <hr> -->
               
                 <ul>
-                    <li class="space_line"><a href="../cart.php">Giỏ hàng</a></li>
-                    <li class="space_line"><a href="my_account.php">Tài khoản</a></li>
-                    <li class="space_line"><a href="../shop.php">Cửa hàng</a></li>  
-                    <li class="space_line"><a href="../contact.php">Liên hệ</a></li>                 
+                    <li class="space_line"><a href="cart.php">Giỏ hàng</a></li>
+                    <li class="space_line"><a href="customer/my_account.php">Tài khoản</a></li>
+                    <li class="space_line"><a href="shop.php">Cửa hàng</a></li>  
+                    <li class="space_line"><a href="contact.php">Liên hệ</a></li>                 
                 </ul>
 
                 <h4 class="headline">Thao tác</h4>
                 
                 <ul>
-                    <li class="space_line2"><a href="../cart.php">Đăng nhập</a></li>
-                    <li class="space_line2"><a href="../checkout.php">Đăng ký</a></li>            
+                    <li class="space_line2"><a href="cart.php">Đăng nhập</a></li>
+                    <li class="space_line2"><a href="customer_register.php">Đăng ký</a></li>            
                 </ul>
 
                 <hr class="hidden-md hidden-lg hidden-sm">
@@ -42,11 +42,24 @@
             <div class="col-sm-6 col-md-3">
                 <h4 class="headline">Danh mục sản phẩm</h4>
                 <ul>
-                    <li class="space_line"><a href="#">Bóng</a></li>
-                    <li class="space_line"><a href="#">Giày</a></li>
-                    <li class="space_line"><a href="#">Quần áo</a></li>
-                    <li class="space_line"><a href="#">Phụ kiện</a></li>
-                    <li class="space_line"><a href="#">Tất</a></li>
+                    <?php 
+                        $get_p_cats = "select * from product_categories";
+                        $run_p_cats = mysqli_query($con,$get_p_cats);
+                        while($row_p_cats=mysqli_fetch_array($run_p_cats)){
+ 
+                            $p_cat_id = $row_p_cats['p_cat_id'];
+                             
+                            $p_cat_title = $row_p_cats['p_cat_title'];
+ 
+                            echo "
+                                <li class='space_line'>
+                                    <a href='shop.php?p_cat=$p_cat_id'>
+                                        $p_cat_title
+                                    </a>
+                                </li>
+                            ";
+                        }
+                    ?>
                 </ul>
 
                 <!-- <h4 class="headline">Thao tác</h4>
@@ -70,7 +83,7 @@
                     <br/>Địa chỉ: 417 KTX khu A, Linh Trung, Thủ Đức, TP.HCM
                 </p>
 
-                <a href="../contact.php">Xem thông tin liên hệ của chúng tôi</a>
+                <a href="contact.php">Xem thông tin liên hệ của chúng tôi</a>
                 <hr class="hidden-md hidden-lg">
 
             </div>
@@ -82,14 +95,18 @@
                      
                  </p>
 
-               <form action="get" method="post">
+               <form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" 
+                onsubmit="window.open('feedburner.google.com/fb/a/mailverify?uri=FlyToAnotherSky', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true" method="post">
                     <div class="input-group">
                         <input type="text" class="form-control" name="email">
+                        <input type="hidden" value="FlyToAnotherSky" name="uri"/><input type="hidden" name="loc" value="en_US"/>
                         <span class="input-group-btn">
                             <input type="submit" value="Subscribe" class="btn btn-default subc">
                         </span>
                     </div>               
                </form>
+
+               
 
                 <hr>
 
